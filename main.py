@@ -10,7 +10,7 @@ def my_form():
 def my_form_post():
     text = request.form['text']
     processed_text = text.upper()
-    return processed_text
+    return ( 'Welcome, 😊 ' + processed_text + ' 😊 to our Cloud Computing Summar 2018 class')
 
 def hello_world():
   return 'Hello, World!\n This looks just amazing within 5 minutes'
