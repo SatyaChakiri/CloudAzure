@@ -1,7 +1,22 @@
-<!doctype html>
-<html>
-   <head>
-       <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.1.3"></script>
+{# Display information about a city. #}
+{# The app fetches the information from the database and passes it into this page in "ci". #}
+{% extends "base.html" %}
+{% block title %}Cluster Information{% endblock %}
+{% block content %}
+
+<p>Cluster distances</p>
+{% for value in values %}
+  <p>{{value}}</p>
+{% endfor %}
+
+
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range Count</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.1.3"></script>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.geom.js?2.1.3"></script>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js?2.1.3"></script>
        <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js" charset="utf-8"></script>
@@ -22,138 +37,13 @@
 	}
 
 	</style>
-   </head>
-   <body>
-   <form action="/Limit" method="POST" >
-	<!--Year:<input type="text" name="Year" placeholder="limit">-->
-    <!--Range 1 :<input type="text" name="ra1" placeholder="limit">-->
-             <!--<input type="text" name="ra11" placeholder="limit">-->
-    <!--Range 2 :<input type="text" name="ra2" placeholder="limit">-->
-             <!--<input type="text" name="ra21" placeholder="limit">-->
-    <!--Range 3 :<input type="text" name="ra3" placeholder="limit">-->
-     Clusters :  <input type="text" name="clusters" placeholder="limit">
-   	 <br>
-   	 <br>
-   	 Execute:  <button type="submit">Submit</button>
-</form>
-   <form action="/Limit2" method="POST" >
-	Year:<input type="text" name="Year" placeholder="limit2">
-    Range 1 :<input type="text" name="ra1" placeholder="limit2">
-   	 <br>
-   	 <br>
-   	 Execute:  <button type="submit">Submit</button>
-</form>
-    <!--<form method="POST">-->
-		<!--<br>-->
-	<!--<header> <h1> Enter Your Name:<br> </h1>-->
-	<!--<br>  -->
-	<!--<h2> This page allows you to enter your name in any case and returns a string in capital case, with a welcome message </h2>-->
-	<!--<br>-->
-    <!--<input name="text">-->
-    <!--<input type="submit">-->
-    <!--<br>-->
-	<!--</header>-->
-   <!--</form>-->
-    <!--<script>-->
-    <!--var svgWidth = 500;-->
-<!--var svgHeight = 300;-->
-<!--var svg = d3.select('svg')-->
-    <!--.attr("width", svgWidth)-->
-    <!--.attr("height", svgHeight)-->
-    <!--.attr("class", "bar-chart");-->
-        <!--var dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];-->
-<!--var barPadding = 5;-->
-<!--var barWidth = (svgWidth / dataset.length);-->
-<!--var barChart = svg.selectAll("rect")-->
-    <!--.data(dataset)-->
-    <!--.enter()-->
-    <!--.append("rect")-->
-    <!--.attr("y", function(d) {-->
-        <!--return svgHeight - d-->
-    <!--})-->
-    <!--.attr("height", function(d) {-->
-        <!--return d;-->
-    <!--})-->
-    <!--.attr("width", barWidth - barPadding)-->
-    <!--.attr("transform", function (d, i) {-->
-         <!--var translate = [barWidth * i, 0];-->
-         <!--return "translate("+ translate +")";-->
-    <!--});-->
-    <!--</script>-->
-    <!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
-    <!--<script>-->
-<!--var margin = {top: 20, right: 20, bottom: 70, left: 40},-->
-    <!--width = 600 - margin.left - margin.right,-->
-    <!--height = 300 - margin.top - margin.bottom;-->
-
-<!--// Parse the date / time-->
-<!--var	parseDate = d3.time.format("%Y-%m").parse;-->
-
-<!--var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);-->
-
-<!--var y = d3.scale.linear().range([height, 0]);-->
-
-<!--var xAxis = d3.svg.axis()-->
-    <!--.scale(x)-->
-    <!--.orient("bottom")-->
-    <!--.tickFormat(d3.time.format("%Y-%m"));-->
-
-<!--var yAxis = d3.svg.axis()-->
-    <!--.scale(y)-->
-    <!--.orient("left")-->
-    <!--.ticks(10);-->
-
-<!--var svg = d3.select("body").append("svg")-->
-    <!--.attr("width", width + margin.left + margin.right)-->
-    <!--.attr("height", height + margin.top + margin.bottom)-->
-  <!--.append("g")-->
-    <!--.attr("transform",-->
-          <!--"translate(" + margin.left + "," + margin.top + ")");-->
-
-<!--d3.csv("bardata.csv", function(error, data) {-->
-
-    <!--data.forEach(function(d) {-->
-        <!--d.date = parseDate(d.date);-->
-        <!--d.value = +d.value;-->
-    <!--});-->
-
-  <!--x.domain(data.map(function(d) { return d.date; }));-->
-  <!--y.domain([0, d3.max(data, function(d) { return d.value; })]);-->
-
-  <!--svg.append("g")-->
-      <!--.attr("class", "x axis")-->
-      <!--.attr("transform", "translate(0," + height + ")")-->
-      <!--.call(xAxis)-->
-    <!--.selectAll("text")-->
-      <!--.style("text-anchor", "end")-->
-      <!--.attr("dx", "-.8em")-->
-      <!--.attr("dy", "-.55em")-->
-      <!--.attr("transform", "rotate(-90)" );-->
-
-  <!--svg.append("g")-->
-      <!--.attr("class", "y axis")-->
-      <!--.call(yAxis)-->
-    <!--.append("text")-->
-      <!--.attr("transform", "rotate(-90)")-->
-      <!--.attr("y", 6)-->
-      <!--.attr("dy", ".71em")-->
-      <!--.style("text-anchor", "end")-->
-      <!--.text("Value ($)");-->
-
-  <!--svg.selectAll("bar")-->
-      <!--.data(data)-->
-    <!--.enter().append("rect")-->
-      <!--.style("fill", "steelblue")-->
-      <!--.attr("x", function(d) { return x(d.date); })-->
-      <!--.attr("width", x.rangeBand())-->
-      <!--.attr("y", function(d) { return y(d.value); })-->
-      <!--.attr("height", function(d) { return height - y(d.value); });-->
-
-<!--});-->
-
-<!--</script>-->
-    <script type="text/javascript">
-        var data = [[5,3], [10,17], [15,4], [2,8]];
+</head>
+<body>
+ {% for value in values %}
+        <p>{{ value }}</p>
+ {% endfor %}
+<script type="text/javascript">
+        var data = [[1,2],[2,3],[3,4]];
 
     var margin = {top: 20, right: 15, bottom: 60, left: 60}
       , width = 960 - margin.left - margin.right
@@ -208,16 +98,17 @@
           .attr("cy", function (d) { return y(d[1]); } )
           .attr("r", 8);
     </script>
-   <script type="text/javascript">
+
+<script type="text/javascript">
 
     var w = 300,                        //width
     h = 300,                            //height
     r = 100,                            //radius
     color = d3.scale.category20c();     //builtin range of colors
-    data=d;
-    <!--data = [{"label":"one", "value":7},-->
-            <!--{"label":"two", "value":7},-->
-            <!--{"label":"three", "value":0}];-->
+    <!--data={{d}};-->
+    data = [{'label':'ra1', 'value': {{ra1[0][0]}}},
+            {'label':'ra2', 'value': {{ra2[0][0]}}},
+            {'label':'ra3', 'value': {{ra3[0][0]}}}];
 
     var vis = d3.select("body")
         .append("svg:svg")              //create the SVG element inside the <body>
@@ -254,5 +145,5 @@
             .text(function(d, i) { return data[i].label; });        //get the label from our original data array
 
     </script>
-   </body>
+</body>
 </html>
