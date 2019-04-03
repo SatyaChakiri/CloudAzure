@@ -1,9 +1,0 @@
-<step title="Incoming Request" date="2019-03-25T20:26:13.444" instance="ae6660" url="/api/scm" method="DELETE" type="request" pid="5016,2,6" Connection="Keep-Alive" Authorization="Bas..." Host="assignment5db.scm.azurewebsites.net" User-Agent="Azure-WebSites-Controller/81.0.7.32" x-ms-request-id="27e3960e-6866-4802-98fc-e8677380d956" X-WAWS-Unencoded-URL="/api/scm" CLIENT-IP="52.173.76.33:7000" X-ARR-LOG-ID="27e3960e-6866-4802-98fc-e8677380d956" X-SITE-DEPLOYMENT-ID="Assignment5db" WAS-DEFAULT-HOSTNAME="assignment5db.scm.azurewebsites.net" X-Forwarded-Proto="https" >
-  <step title="Assuming git repository at D:\home\site\repository" date="2019-03-25T20:26:13.615" /><!-- duration: 16ms -->
-  <step title="Deleting repository" date="2019-03-25T20:26:13.709" /><!-- duration: 832ms -->
-  <step title="Delete auto swap lock file" date="2019-03-25T20:26:14.557" /><!-- duration: 0ms -->
-  <step title="Deleting ssh key" date="2019-03-25T20:26:14.557" /><!-- duration: 32ms -->
-  <step title="Updating initial deployment manifest" date="2019-03-25T20:26:14.589" /><!-- duration: 31ms -->
-  <step title="Deleting deployment cache" date="2019-03-25T20:26:14.619" /><!-- duration: 128ms -->
-  <step title="Outgoing response" date="2019-03-25T20:26:14.763" type="response" statusCode="204" statusText="No Content" Server="Microsoft-IIS/10.0" x-ms-request-id="27e3960e-6866-4802-98fc-e8677380d956" Cache-Control="private" X-AspNet-Version="4.0.30319" /><!-- duration: 16ms -->
-</step><!-- duration: 1335ms -->

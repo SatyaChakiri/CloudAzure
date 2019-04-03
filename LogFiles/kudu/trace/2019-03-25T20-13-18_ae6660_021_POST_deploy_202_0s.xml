@@ -1,7 +1,0 @@
-<step title="Incoming Request" date="2019-03-25T20:13:18.745" instance="ae6660" url="/deploy?scmType=GitHub&amp;isAsync=true" method="POST" type="request" pid="1576,2,14" Connection="Keep-Alive" Content-Length="86" Authorization="Bas..." Expect="100-continue" Host="assignment5db.scm.azurewebsites.net" User-Agent="Azure-WebSites-Controller/81.0.7.32" x-ms-request-id="c5dea8cd-d93d-4b56-9601-7d44935efce6" X-WAWS-Unencoded-URL="/deploy?scmType=GitHub&amp;isAsync=true" CLIENT-IP="52.173.76.33:7000" X-ARR-LOG-ID="c5dea8cd-d93d-4b56-9601-7d44935efce6" X-SITE-DEPLOYMENT-ID="Assignment5db" WAS-DEFAULT-HOSTNAME="assignment5db.scm.azurewebsites.net" X-Forwarded-Proto="https" >
-  <step title="Cleanup Xml Logs" date="2019-03-25T20:13:18.761" /><!-- duration: 16ms -->
-  <step title="FetchHandler" date="2019-03-25T20:13:18.792" >
-    <step title="Start deployment in the background" date="2019-03-25T20:13:18.792" /><!-- duration: 94ms -->
-  </step><!-- duration: 94ms -->
-  <step title="Outgoing response" date="2019-03-25T20:13:18.904" type="response" statusCode="202" statusText="Accepted" Server="Microsoft-IIS/10.0" Location="https://assignment5db.scm.azurewebsites.net/api/deployments/latest?deployer=GitHub&amp;time=2019-03-25_20-13-18Z" Cache-Control="private" X-AspNet-Version="4.0.30319" /><!-- duration: 0ms -->
-</step><!-- duration: 172ms -->

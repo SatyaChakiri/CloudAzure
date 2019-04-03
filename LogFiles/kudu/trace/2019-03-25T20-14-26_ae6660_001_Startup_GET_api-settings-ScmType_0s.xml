@@ -1,3 +1,0 @@
-<step title="Startup Request" date="2019-03-25T20:14:26.072" instance="ae6660" url="/api/settings/ScmType" method="GET" type="request" pid="2900,2,6" ScmType="GitHub" SCM_SKIP_SSL_VALIDATION="0" >
-  <step title="Cleanup Xml Logs" date="2019-03-25T20:14:26.085" /><!-- duration: 16ms -->
-</step><!-- duration: 29ms -->
