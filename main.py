@@ -129,11 +129,21 @@ def my_form():
     #         break
     # # print(run2)
     # return render_template('kmeans.html',values=centroidvaldist2,len=clusters)
-#
-@app.route('/Limit', methods=['get', 'post'])
-def limit():
+
+@app.route('/Limit2', methods=['get', 'post'])
+def limit2():
+    strat = time()
     clusters=int(request.form['clusters'])
-    query1="Select fare,age from dbo.titanic"  #where "++">"+ra1+" and Y"+year+"<"+ra11+";"
+    att1=request.form['att1']
+    att2=request.form['att2']
+    point1 = request.form['poi1']
+    point2 = request.form['poi2']
+    if(att1=="decklevel"):
+        query1 = "Select cabinnum/100," + att2 + " from dbo.minnow;"  # where "++">"+ra1+" and Y"+year+"<"+ra11+";"
+    elif(att2=="decklevel"):
+      query1 = "Select "+ att1 +",cabinnum/100 from dbo.minnow;"  # where "++">"+ra1+" and Y"+year+"<"+ra11+";"
+    else:
+     query1="Select "+ att1+","+att2+" from dbo.minnow"  #where "++">"+ra1+" and Y"+year+"<"+ra11+";"
     cur = connection.cursor()
     cur.execute(query1)
     val1 = cur.fetchall()
@@ -162,6 +172,8 @@ def limit():
     run=0
     run2=0
     while(True):
+        centroidvaluesnew=centroidvalues
+        print(centroidvaluesnew)
         for i in range(len(val1)):
             centroiddist=[]
             for j in range(len(centroidvalues)):
@@ -178,6 +190,10 @@ def limit():
             centroidpoint=(xavg/len(centroidvalues[i]),yavg/len(centroidvalues[i]))
             centroidvalues2.append([centroidpoint])
         centroidvalues3=centroidvalues
+        pointcount=[]
+        for i in range(clusters):
+            pointcount.append(len(centroidvalues3[i]))
+        print(pointcount)
         centroidvalues=centroidvalues2
         # print(centroidvalues)
         centroidvaldist2=centroidvaldist
@@ -195,8 +211,118 @@ def limit():
         print(run2)
         if run==0:
             break
+        endtime=time()
+        time_taken=endtime-strat
+    point=(point1,point2)
+    pointdis=[]
+    for i in range(clusters):
+        dist=math.sqrt((centroidvaluesnew[i][0][0]-point1)**2+(centroidvaluesnew[i][0][1]-point2)**2)
+        pointdis.append(dist)
+    pointcluster1=centroidvaluesnew[pointdis.index(min(pointdis))][6][0]
+    pointcluster2 = centroidvaluesnew[pointdis.index(min(pointdis))][6][1]
+    query1 = "Select * from dbo.minnow where "+att1+"=="+ pointcluster1 + "and "+att2+"=="+pointcluster2+";"  # where "++">"+ra1+" and Y"+year+"<"+ra11+";"
     # print(run2)
-    return render_template('kmeans.html',values=centroidvaldist2,len=clusters)
+    return render_template('kmeans.html',points=pointcount,time=time_taken,centroids=centroidvaluesnew,values=centroidvaldist2,len=clusters)
+
+
+@app.route('/Limit', methods=['get', 'post'])
+def limit():
+    strat = time()
+    clusters=int(request.form['clusters'])
+    att1=request.form['att1']
+    att2=request.form['att2']
+    point1 = request.form['poi1']
+    point2 = request.form['poi2']
+    if(att1=="decklevel"):
+        query1 = "Select cabinnum/100," + att2 + " from dbo.minnow;"  # where "++">"+ra1+" and Y"+year+"<"+ra11+";"
+    elif(att2=="decklevel"):
+      query1 = "Select "+ att1 +",cabinnum/100 from dbo.minnow;"  # where "++">"+ra1+" and Y"+year+"<"+ra11+";"
+    else:
+     query1="Select "+ att1+","+att2+" from dbo.minnow"  #where "++">"+ra1+" and Y"+year+"<"+ra11+";"
+    cur = connection.cursor()
+    cur.execute(query1)
+    val1 = cur.fetchall()
+    import random
+    centroid=[]
+    centroidval=[]
+    # clusters = 5
+    i=0
+    while i<clusters:
+      value=random.randint(0,len(val1)-1)
+      if value not in centroid:
+       centroidval.append([val1[int(value)]])
+       centroid.append(value)
+       i+=1
+    centroidvalues=centroidval
+    centroidvaldist = []
+    for i in range(len(centroidvalues)):
+        distval=[]
+        for j in range(len(centroidvalues)):
+            dist = math.sqrt((centroidvalues[j][0][0] - centroidvalues[i][0][0]) ** 2 + (
+                        centroidvalues[j][0][1] - centroidvalues[i][0][1]) ** 2)
+            distval.append(dist)
+        centroidvaldist.append(distval)
+    # print(centroidval)
+    # print(centroidvaldist)
+    run=0
+    run2=0
+    while(True):
+        centroidvaluesnew=centroidvalues
+        print(centroidvaluesnew)
+        for i in range(len(val1)):
+            centroiddist=[]
+            for j in range(len(centroidvalues)):
+                dist=math.sqrt((centroidvalues[j][0][0]-val1[i][0])**2+(centroidvalues[j][0][1]-val1[i][1])**2)
+                centroiddist.append(dist)
+            centroidvalues[centroiddist.index(min(centroiddist))].append(val1[i])
+        centroidvalues2=[]
+        for i in range(len(centroidvalues)):
+            xavg = 0
+            yavg = 0
+            for j in range(len(centroidvalues[i])):
+                xavg+=centroidvalues[i][j][0]
+                yavg+=centroidvalues[i][j][1]
+            centroidpoint=(xavg/len(centroidvalues[i]),yavg/len(centroidvalues[i]))
+            centroidvalues2.append([centroidpoint])
+        centroidvalues3=centroidvalues
+        pointcount=[]
+        for i in range(clusters):
+            pointcount.append(len(centroidvalues3[i]))
+        print(pointcount)
+        centroidvalues=centroidvalues2
+        # print(centroidvalues)
+        centroidvaldist2=centroidvaldist
+        run=0
+        # print(centroidvalues)
+        for i in range(len(centroidvalues)):
+            for j in range(len(centroidvalues)):
+                dist=math.sqrt((centroidvalues[j][0][0]-centroidvalues[i][0][0])**2+(centroidvalues[j][0][1]-centroidvalues[i][0][1])**2)
+                if (centroidvaldist2[i][j]-dist)<-1 or (centroidvaldist2[i][j]-dist)>1:
+                    run += 1
+                centroidvaldist[i][j]=dist
+        # print(centroidvaldist)
+        run2+=1
+        print(run)
+        print(run2)
+        if run==0:
+            break
+        endtime=time()
+        time_taken=endtime-strat
+    point=(point1,point2)
+    pointdis=[]
+    for i in range(clusters):
+        dist=math.sqrt((centroidvaluesnew[i][0][0]-int(point1))**2+(centroidvaluesnew[i][0][1]-int(point2))**2)
+        pointdis.append(dist)
+    pointcluster1=str(centroidvaluesnew[pointdis.index(min(pointdis))][6][0])
+    pointcluster2 = str(centroidvaluesnew[pointdis.index(min(pointdis))][6][1])
+    query1 = "Select * from dbo.minnow where "+att1+"="+ pointcluster1 + " and "+att2+"="+pointcluster2+";"
+    # print(run2)
+    print(query1)
+    cur = connection.cursor()
+    cur.execute(query1)
+    val1 = cur.fetchall()
+    print(val1[0][1])
+    return render_template('kmeans.html',points=pointcount,time=time_taken,centroids=centroidvaluesnew,values=centroidvaldist2,len=clusters,age=val1[0][3],cbin=val1[0][0],sur=val1[0][4])
 #     year=request.form['Year']
 #     ra1 = int(request.form['ra1'])
 #     ra1=str(ra1*100000)
