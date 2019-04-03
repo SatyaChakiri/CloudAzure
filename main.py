@@ -12,8 +12,8 @@ from random import *
 import random
 
 app = Flask(__name__)
-app.config['SESSION_TYPE'] = 'memcached'
-app.config['SECRET_KEY'] = 'Secret'
+# app.config['SESSION_TYPE'] = 'memcached'
+# app.config['SECRET_KEY'] = 'Secret'
 
 server = 'clouddbaseserver.database.windows.net'
 database = 'clouddb'
@@ -33,35 +33,6 @@ cursor = connection.cursor()
 
 @app.route('/')
 def my_form():
-    # CabinNum, Fname, Lname, Age, Survived, Lat, Long, PictureCap, PicturePas, Fare
-    # cursor.execute("CREATE TABLE [dbo].[population](\
-    #             [state][nvarchar](100) NULL,\
-    #             [y2010][float] NULL,\
-    #             [y2011][float] NULL,\
-    #             [y2012][float] NULL,\
-    #             [y2013][float] NULL,\
-    #             [y2014][float] NULL,\
-    #             [y2015][float] NULL,\
-    #             [y2016][float] NULL,\
-    #             [y2017][float] NULL,\
-    #             [y2018][float] NULL)")
-    # connection.commit()
-    #
-    # query = "INSERT INTO dbo.population (state,y2010,y2011,y2012,y2013,y2014,y2015,y2016,y2017,y2018) VALUES (?,?,?,?,?,?,?,?,?,?)"
-    #
-    # with open('population.csv') as csvfile:
-    #         next(csvfile)
-    #         reader = csv.reader(csvfile, delimiter=',')
-    #         for row in reader:
-    #             print(row)
-    #             for i in range(len(row)-1):
-    #                 row[i+1]=row[i+1].strip()
-    #                 row[i + 1] = row[i + 1].replace(',','')
-    #                 print(row[i + 1])
-    #                 row[i+1]=int(row[i+1])
-    #             print(row)
-    #             cursor.execute(query, row)
-    # connection.commit()
     return render_template('my-form.html')
     # connection.commit()
     # clusters=request.form['Year']
