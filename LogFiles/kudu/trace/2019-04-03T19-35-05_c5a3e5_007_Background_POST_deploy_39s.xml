@@ -1,0 +1,22 @@
+<step title="BackgroundTrace" date="2019-04-03T19:35:05.106" instance="c5a3e5" url="/deploy" method="POST" >
+  <step title="Performing fetch based deployment" date="2019-04-03T19:35:05.184" >
+    <step title="Creating temporary deployment" date="2019-04-03T19:35:05.263" /><!-- duration: 77ms -->
+    <step title="DeploymentManager.Deploy(id:a85becce2a7c4094f7abe2838bf31d4ad161b918)" date="2019-04-03T19:35:08.169" >
+      <step title="Collecting changeset information" date="2019-04-03T19:35:08.184" /><!-- duration: 47ms -->
+      <step title="Updating submodules" date="2019-04-03T19:35:08.231" /><!-- duration: 78ms -->
+      <step title="Determining deployment builder" date="2019-04-03T19:35:08.559" >
+        <step title="Builder is PythonSiteBuilder" date="2019-04-03T19:35:08.746" /><!-- duration: 0ms -->
+      </step><!-- duration: 188ms -->
+      <step title="Copying SSH keys" date="2019-04-03T19:35:08.793" /><!-- duration: 22ms -->
+      <step title="Building" date="2019-04-03T19:35:08.815" >
+        <step title="Generating deployment script" date="2019-04-03T19:35:08.878" >
+          <step title="Using cached version of the deployment script for command: -y --no-dot-deployment -r &quot;D:\home\site\repository&quot; -o &quot;D:\home\site\deployments\tools&quot; --python --sitePath &quot;D:\home\site\repository&quot;" date="2019-04-03T19:35:09.034" /><!-- duration: 0ms -->
+        </step><!-- duration: 172ms -->
+        <step title="Executing external process" date="2019-04-03T19:35:09.206" type="process" path="starter.cmd" arguments="&quot;D:\home\site\deployments\tools\deploy.cmd&quot;" /><!-- duration: 34145ms -->
+        <step title="Skip function trigger and logicapp sync because function is not enabled." date="2019-04-03T19:35:43.492" /><!-- duration: 16ms -->
+      </step><!-- duration: 35083ms -->
+    </step><!-- duration: 35751ms -->
+    <step title="Cleaning up temp files" date="2019-04-03T19:35:43.929" /><!-- duration: 16ms -->
+    <step title="WebHooksManager.PublishEventAsync: PostDeployment" date="2019-04-03T19:35:43.976" /><!-- duration: 125ms -->
+  </step><!-- duration: 38995ms -->
+</step><!-- duration: 39088ms -->

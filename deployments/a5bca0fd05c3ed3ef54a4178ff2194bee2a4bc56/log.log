@@ -1,0 +1,43 @@
+2019-04-03T19:43:17.6609426Z,Updating submodules.,12ee305e-1d6a-404a-a663-74dec1e2cd0a,0
+2019-04-03T19:43:17.7703205Z,Preparing deployment for commit id 'a5bca0fd05'.,fb705c59-85b4-4884-8237-6f935b0085f8,0
+2019-04-03T19:43:18.0359614Z,Generating deployment script.,da592f09-b1a6-4a4c-aa8b-cba1ced5717f,0
+	2019-04-03T19:43:18.0991802Z,Using cached version of deployment script (command: 'azure -y --no-dot-deployment -r "D:\home\site\repository" -o "D:\home\site\deployments\tools" --python --sitePath "D:\home\site\repository"').,,0
+2019-04-03T19:43:18.1765845Z,Running deployment command...,3b84be80-c7d6-400d-b4dd-0e3c34279913,0
+	2019-04-03T19:43:18.1922167Z,Command: "D:\home\site\deployments\tools\deploy.cmd",,0
+	2019-04-03T19:43:21.0829728Z,Handling python deployment.,,0
+	2019-04-03T19:43:21.7861210Z,Creating app_offline.htm,,0
+	2019-04-03T19:43:21.8017479Z,KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot',,0
+	2019-04-03T19:43:21.8176176Z,Copying file: 'requirements.txt',,0
+	2019-04-03T19:43:21.8176176Z,Copying file: 'templates\my-form.html',,0
+	2019-04-03T19:43:21.8176176Z,Deleting app_offline.htm,,0
+	2019-04-03T19:43:21.8642501Z,Detected requirements.txt.  You can skip Python specific steps with a .skipPythonDeployment file.,,0
+	2019-04-03T19:43:22.3017698Z,Detecting Python runtime from site configuration,,0
+	2019-04-03T19:43:22.3017698Z,Detected python-3.6,,0
+	2019-04-03T19:43:22.3819561Z,Found compatible virtual environment.,,0
+	2019-04-03T19:43:22.3819561Z,Pip install requirements.,,0
+	2019-04-03T19:43:28.4229796Z,Requirement already satisfied: Flask in d:\home\site\wwwroot\env\lib\site-packages (from -r requirements.txt (line 1)) (0.12.1),,0
+	2019-04-03T19:43:28.5026067Z,Collecting pypyodbc (from -r requirements.txt (line 2)),,0
+	2019-04-03T19:43:29.1573948Z,  Downloading https://files.pythonhosted.org/packages/ea/48/bb5412846df5b8f97d42ac24ac36a6b77a802c2778e217adc0d3ec1ee7bf/pypyodbc-1.3.5.2.zip,,0
+	2019-04-03T19:43:35.1151704Z,Collecting numpy (from -r requirements.txt (line 3)),,0
+	2019-04-03T19:43:36.2402180Z,  Downloading https://files.pythonhosted.org/packages/b3/84/41c7af95bab850819bddbc13e3e10317dacd3e28e2a0a5f14d8dbdc1c725/numpy-1.16.2-cp36-cp36m-win32.whl (10.0MB),,0
+	2019-04-03T19:43:45.7576233Z,Collecting scipy (from -r requirements.txt (line 5)),,0
+	2019-04-03T19:43:46.9596795Z,  Downloading https://files.pythonhosted.org/packages/b7/b6/eedfa8b002ffae365c3f957154a9c29cb91a8e657808749c78758f0f8110/scipy-1.2.1-cp36-cp36m-win32.whl (26.9MB),,0
+	2019-04-03T19:44:07.7307815Z,Collecting scikit-learn (from -r requirements.txt (line 7)),,0
+	2019-04-03T19:44:08.5120689Z,  Downloading https://files.pythonhosted.org/packages/bb/6d/eaa2b50effa26a66e383ce8cf167197b3c8a3c5bbc92ff739323d9f169b3/scikit_learn-0.20.3-cp36-cp36m-win32.whl (4.3MB),,0
+	2019-04-03T19:44:13.3365711Z,Requirement already satisfied: click>=2.0 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (7.0),,0
+	2019-04-03T19:44:13.3684658Z,Requirement already satisfied: itsdangerous>=0.21 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (1.1.0),,0
+	2019-04-03T19:44:13.3817146Z,Requirement already satisfied: Jinja2>=2.4 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (2.10),,0
+	2019-04-03T19:44:13.4129676Z,Requirement already satisfied: Werkzeug>=0.7 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (0.15.1),,0
+	2019-04-03T19:44:13.4598407Z,Requirement already satisfied: setuptools in d:\home\site\wwwroot\env\lib\site-packages (from pypyodbc->-r requirements.txt (line 2)) (39.0.1),,0
+	2019-04-03T19:44:13.4912041Z,Requirement already satisfied: MarkupSafe>=0.23 in d:\home\site\wwwroot\env\lib\site-packages (from Jinja2>=2.4->Flask->-r requirements.txt (line 1)) (1.1.1),,0
+	2019-04-03T19:44:13.6629794Z,Installing collected packages: pypyodbc&comma; numpy&comma; scipy&comma; scikit-learn,,0
+	2019-04-03T19:44:13.6629794Z,  Running setup.py install for pypyodbc: started,,0
+	2019-04-03T19:44:18.3335136Z,    Running setup.py install for pypyodbc: finished with status 'done',,0
+	2019-04-03T19:47:14.1779327Z,Successfully installed numpy-1.16.2 pypyodbc-1.3.4 scikit-learn-0.20.3 scipy-1.2.1,,0
+	2019-04-03T19:47:19.7440218Z,You are using pip version 10.0.1&comma; however version 19.0.3 is available.,,1
+	2019-04-03T19:47:19.7562838Z,You should consider upgrading via the 'python -m pip install --upgrade pip' command.,,1
+	2019-04-03T19:47:19.9281636Z,Overwriting web.config with web.3.6.config,,0
+	2019-04-03T19:47:20.0062908Z,        1 file(s) copied.,,0
+	2019-04-03T19:47:20.0554308Z,Finished successfully.,,0
+2019-04-03T19:47:20.1626527Z,Running post deployment command(s)...,76de3b97-19ff-47b5-b4eb-0a16e3683dfc,0
+2019-04-03T19:47:20.2875573Z,Deployment successful.,c6da588c-e2f5-4e38-968d-a6ddd0cec770,0

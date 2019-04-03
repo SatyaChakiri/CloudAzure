@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment>
+  <id>a85becce2a7c4094f7abe2838bf31d4ad161b918</id>
+  <author>Satya</author>
+  <deployer>GitHub</deployer>
+  <authorEmail>satyanarayan.chakiri@mavs.uta.edu</authorEmail>
+  <message>one
+</message>
+  <progress></progress>
+  <status>Success</status>
+  <statusText></statusText>
+  <lastSuccessEndTime>2019-04-03T19:35:43.6639651Z</lastSuccessEndTime>
+  <receivedTime>2019-04-03T19:35:08.2000577Z</receivedTime>
+  <startTime>2019-04-03T19:35:08.5125974Z</startTime>
+  <endTime>2019-04-03T19:35:43.6639651Z</endTime>
+  <complete>True</complete>
+  <is_temp>False</is_temp>
+  <is_readonly>False</is_readonly>
+</deployment>

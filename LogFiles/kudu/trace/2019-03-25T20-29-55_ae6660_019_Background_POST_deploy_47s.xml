@@ -1,0 +1,23 @@
+<step title="BackgroundTrace" date="2019-03-25T20:29:55.567" instance="ae6660" url="/deploy" method="POST" >
+  <step title="Performing fetch based deployment" date="2019-03-25T20:29:55.646" >
+    <step title="Creating temporary deployment" date="2019-03-25T20:29:55.646" /><!-- duration: 31ms -->
+    <step title="DeploymentManager.Deploy(id:68a9010fdb55f9274a83bf67bb4a4d7abf782da8)" date="2019-03-25T20:29:56.817" >
+      <step title="Collecting changeset information" date="2019-03-25T20:29:56.833" /><!-- duration: 47ms -->
+      <step title="Updating submodules" date="2019-03-25T20:29:56.880" /><!-- duration: 63ms -->
+      <step title="Determining deployment builder" date="2019-03-25T20:29:57.036" >
+        <step title="Builder is PythonSiteBuilder" date="2019-03-25T20:29:57.067" /><!-- duration: 16ms -->
+      </step><!-- duration: 47ms -->
+      <step title="Copying SSH keys" date="2019-03-25T20:29:57.114" /><!-- duration: 16ms -->
+      <step title="Building" date="2019-03-25T20:29:57.130" >
+        <step title="Generating deployment script" date="2019-03-25T20:29:57.177" >
+          <step title="Using cached version of the deployment script for command: -y --no-dot-deployment -r &quot;D:\home\site\repository&quot; -o &quot;D:\home\site\deployments\tools&quot; --python --sitePath &quot;D:\home\site\repository&quot;" date="2019-03-25T20:29:57.208" /><!-- duration: 0ms -->
+        </step><!-- duration: 47ms -->
+        <step title="Executing external process" date="2019-03-25T20:29:57.302" type="process" path="starter.cmd" arguments="&quot;D:\home\site\deployments\tools\deploy.cmd&quot;" /><!-- duration: 43958ms -->
+        <step title="Skip function trigger and logicapp sync because function is not enabled." date="2019-03-25T20:30:41.370" /><!-- duration: 0ms -->
+      </step><!-- duration: 44456ms -->
+    </step><!-- duration: 44784ms -->
+    <step title="Cleaning up temp files" date="2019-03-25T20:30:41.602" /><!-- duration: 16ms -->
+    <step title="WebHooksManager.PublishEventAsync: PostDeployment" date="2019-03-25T20:30:41.633" /><!-- duration: 16ms -->
+  </step><!-- duration: 46034ms -->
+  <step title="Performing fetch based deployment" date="2019-03-25T20:30:41.680" /><!-- duration: 491ms -->
+</step><!-- duration: 46619ms -->

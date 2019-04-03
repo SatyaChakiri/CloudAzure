@@ -1,0 +1,35 @@
+2019-04-03T19:49:46.5755159Z,Updating submodules.,7c026ec0-8427-47c8-9046-3ce7d642d8d5,0
+2019-04-03T19:49:46.6848963Z,Preparing deployment for commit id '8d9d776146'.,1e302803-c13e-4d27-ad2a-cc10df8af305,0
+2019-04-03T19:49:47.3281539Z,Generating deployment script.,aefba331-2a74-4624-a07b-944c27e9e75d,0
+	2019-04-03T19:49:47.4219057Z,Using cached version of deployment script (command: 'azure -y --no-dot-deployment -r "D:\home\site\repository" -o "D:\home\site\deployments\tools" --python --sitePath "D:\home\site\repository"').,,0
+2019-04-03T19:49:47.4687842Z,Running deployment command...,95a603ae-5dea-4a1b-957d-079c2cbee732,0
+	2019-04-03T19:49:47.4687842Z,Command: "D:\home\site\deployments\tools\deploy.cmd",,0
+	2019-04-03T19:49:50.3283023Z,Handling python deployment.,,0
+	2019-04-03T19:49:51.0187495Z,Creating app_offline.htm,,0
+	2019-04-03T19:49:51.0187495Z,KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot',,0
+	2019-04-03T19:49:51.0343888Z,Copying file: 'main.py',,0
+	2019-04-03T19:49:51.0343888Z,Copying file: 'templates\my-form.html',,0
+	2019-04-03T19:49:51.0343888Z,Deleting app_offline.htm,,0
+	2019-04-03T19:49:51.0503595Z,Detected requirements.txt.  You can skip Python specific steps with a .skipPythonDeployment file.,,0
+	2019-04-03T19:49:51.4562877Z,Detecting Python runtime from site configuration,,0
+	2019-04-03T19:49:51.4719105Z,Detected python-3.6,,0
+	2019-04-03T19:49:51.5033459Z,Found compatible virtual environment.,,0
+	2019-04-03T19:49:51.5187917Z,Pip install requirements.,,0
+	2019-04-03T19:49:56.8476711Z,Requirement already satisfied: Flask in d:\home\site\wwwroot\env\lib\site-packages (from -r requirements.txt (line 1)) (0.12.1),,0
+	2019-04-03T19:49:56.8789250Z,Requirement already satisfied: pypyodbc in d:\home\site\wwwroot\env\lib\site-packages (from -r requirements.txt (line 2)) (1.3.4),,0
+	2019-04-03T19:49:56.8945475Z,Requirement already satisfied: numpy in d:\home\site\wwwroot\env\lib\site-packages (from -r requirements.txt (line 3)) (1.16.2),,0
+	2019-04-03T19:49:56.9414311Z,Requirement already satisfied: scipy in d:\home\site\wwwroot\env\lib\site-packages (from -r requirements.txt (line 5)) (1.2.1),,0
+	2019-04-03T19:49:56.9734225Z,Requirement already satisfied: scikit-learn in d:\home\site\wwwroot\env\lib\site-packages (from -r requirements.txt (line 7)) (0.20.3),,0
+	2019-04-03T19:49:57.0058527Z,Requirement already satisfied: click>=2.0 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (7.0),,0
+	2019-04-03T19:49:57.0195546Z,Requirement already satisfied: Jinja2>=2.4 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (2.10),,0
+	2019-04-03T19:49:57.0508066Z,Requirement already satisfied: Werkzeug>=0.7 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (0.15.1),,0
+	2019-04-03T19:49:57.2539407Z,Requirement already satisfied: itsdangerous>=0.21 in d:\home\site\wwwroot\env\lib\site-packages (from Flask->-r requirements.txt (line 1)) (1.1.0),,0
+	2019-04-03T19:49:57.3320700Z,Requirement already satisfied: setuptools in d:\home\site\wwwroot\env\lib\site-packages (from pypyodbc->-r requirements.txt (line 2)) (39.0.1),,0
+	2019-04-03T19:49:57.3633230Z,Requirement already satisfied: MarkupSafe>=0.23 in d:\home\site\wwwroot\env\lib\site-packages (from Jinja2>=2.4->Flask->-r requirements.txt (line 1)) (1.1.1),,0
+	2019-04-03T19:49:57.6635254Z,You are using pip version 10.0.1&comma; however version 19.0.3 is available.,,1
+	2019-04-03T19:49:57.6758386Z,You should consider upgrading via the 'python -m pip install --upgrade pip' command.,,1
+	2019-04-03T19:49:57.8320944Z,Overwriting web.config with web.3.6.config,,0
+	2019-04-03T19:49:57.8946026Z,        1 file(s) copied.,,0
+	2019-04-03T19:49:57.9279448Z,Finished successfully.,,0
+2019-04-03T19:49:58.0039784Z,Running post deployment command(s)...,31c4965c-71a3-43f9-ad30-841bc36f3aaf,0
+2019-04-03T19:49:58.1133617Z,Deployment successful.,8aa5332d-ecff-4048-a5e0-9fb411cf9bc2,0

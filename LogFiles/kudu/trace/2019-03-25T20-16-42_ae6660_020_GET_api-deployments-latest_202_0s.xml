@@ -1,0 +1,10 @@
+<step title="Incoming Request" date="2019-03-25T20:16:42.101" instance="ae6660" url="/api/deployments/latest?deployer=GitHub&amp;time=2019-03-25_20-14-26Z" method="GET" type="request" pid="2900,2,18" Connection="Keep-Alive" Authorization="Bas..." Host="assignment5db.scm.azurewebsites.net" User-Agent="Azure-WebSites-Controller/81.0.7.32" x-ms-request-id="77e901ed-1882-473d-aba6-a240bc91e5a9" X-WAWS-Unencoded-URL="/api/deployments/latest?deployer=GitHub&amp;time=2019-03-25_20-14-26Z" CLIENT-IP="52.173.76.33:43936" X-ARR-LOG-ID="77e901ed-1882-473d-aba6-a240bc91e5a9" X-SITE-DEPLOYMENT-ID="Assignment5db" WAS-DEFAULT-HOSTNAME="assignment5db.scm.azurewebsites.net" X-Forwarded-Proto="https" >
+  <step title="Cleanup Xml Logs" date="2019-03-25T20:16:42.101" /><!-- duration: 16ms -->
+  <step title="DeploymentService.GetResult" date="2019-03-25T20:16:42.133" >
+    <step title="DeploymentService.GetLatestDeployment" date="2019-03-25T20:16:42.133" >
+      <step title="DeploymentManager.GetResults" date="2019-03-25T20:16:42.133" /><!-- duration: 63ms -->
+      <step title="Deployment bc5d273570364073cbe3325b2806d940ccbb21f6 is Building" date="2019-03-25T20:16:42.211" /><!-- duration: 0ms -->
+    </step><!-- duration: 78ms -->
+  </step><!-- duration: 188ms -->
+  <step title="Outgoing response" date="2019-03-25T20:16:42.320" type="response" statusCode="202" statusText="Accepted" Server="Microsoft-IIS/10.0" x-ms-request-id="77e901ed-1882-473d-aba6-a240bc91e5a9" Cache-Control="private" X-AspNet-Version="4.0.30319" Location="https://assignment5db.scm.azurewebsites.net/api/deployments/latest?deployer=GitHub&amp;time=2019-03-25_20-14-26Z" Content-Type="application/json; charset=utf-8" /><!-- duration: 16ms -->
+</step><!-- duration: 234ms -->

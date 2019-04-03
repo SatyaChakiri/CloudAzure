@@ -1,0 +1,6 @@
+<step title="Incoming Request" date="2019-03-25T20:26:34.585" instance="ae6660" url="/deploy?scmType=GitHub" method="POST" type="request" pid="5016,2,10" Connection="Keep-Alive" Content-Length="9534" Content-Type="application/x-www-form-urlencoded" Accept="*/*" Authorization="Bas..." Host="assignment5db.scm.azurewebsites.net" User-Agent="GitHub-Hookshot/903858c" X-GitHub-Event="ping" X-GitHub-Delivery="485e4340-4f3c-11e9-9ea5-cc08c47a3555" X-WAWS-Unencoded-URL="/deploy?scmType=GitHub" CLIENT-IP="192.30.252.37:49558" X-ARR-LOG-ID="2332f49a-e57d-46da-baec-1ba527176cbf" X-SITE-DEPLOYMENT-ID="Assignment5db" WAS-DEFAULT-HOSTNAME="assignment5db.scm.azurewebsites.net" X-Forwarded-Proto="https" >
+  <step title="FetchHandler" date="2019-03-25T20:26:34.633" >
+    <step title="No-op for deployment." date="2019-03-25T20:26:34.729" /><!-- duration: 15ms -->
+  </step><!-- duration: 111ms -->
+  <step title="Outgoing response" date="2019-03-25T20:26:34.757" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/10.0" Cache-Control="private" X-AspNet-Version="4.0.30319" /><!-- duration: 0ms -->
+</step><!-- duration: 172ms -->
